@@ -1,16 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;600;700&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
 body { 
-    font-family: Arial, sans-serif; 
-    font-size: 12pt; 
-    margin: 40px; 
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 11pt; 
+    margin: 40px 20px 40px 20px;
+    color: #030303;
+    background-color: #fefefe;
 }
 
 h1 { 
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
     text-align: center; 
-    color: #2c3e50; 
+    color: #168FD8;
+    margin-bottom: 30px;
 }
 
 h2 { 
-    color: #34495e; 
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #E25041;
+    margin-top: 25px;
+    margin-bottom: 12px;
 }
 
 table { 
@@ -20,17 +36,24 @@ table {
 }
 
 th, td { 
-    border: 1px solid #bdc3c7; 
+    border: 1px solid #168FD8; 
     padding: 8px; 
-    text-align: left; 
+    text-align: left;
+    font-family: "Geist", sans-serif;
 }
 
 th { 
-    background-color: #ecf0f1; 
+    background-color: #168FD8;
+    color: #fefefe;
+    font-weight: 600;
 }
 
 tr:nth-child(even) { 
-    background-color: #f9f9f9; 
+    background-color: #f8f9fa; 
+}
+
+tr:hover {
+    background-color: #f0f7fc;
 }
 
 .right-align { 
@@ -38,9 +61,34 @@ tr:nth-child(even) {
 }
 
 pre, code { 
-    font-family: monospace; 
+    font-family: "Geist Mono", monospace;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #030303;
 }
 
 p { 
-    line-height: 1.5; 
+    font-family: "Geist", sans-serif;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+strong, b {
+    font-weight: 600;
+    color: #030303;
+}
+
+/* Enhanced styling for better invoice appearance */
+.invoice-header {
+    border-bottom: 2px solid #168FD8;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.total-amount {
+    font-weight: 600;
+    color: #E25041;
+    font-size: 1.1em;
 } 

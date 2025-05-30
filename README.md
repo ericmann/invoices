@@ -41,11 +41,30 @@ A Python script that generates professional PDF invoices from YAML data files.
    python main.py
    ```
 
+### Command Line Options
+
+The script supports the following command line options:
+
+- **Standard generation**: `python main.py`
+  - Processes all invoices and skips any that already have PDFs generated
+
+- **Force regeneration**: `python main.py --regenerate`
+  - Forces regeneration of all invoices, overwriting existing PDFs
+  - Useful when you've updated styling or invoice data and want fresh PDFs
+
+- **Debug mode**: `python main.py --debug`
+  - Saves the generated HTML to `debug.html` for browser inspection
+  - Useful for testing CSS changes and troubleshooting layout issues
+  - Opens in your browser to see exactly how the invoice will look
+
+- **Combined flags**: `python main.py --regenerate --debug`
+  - You can combine flags to regenerate all invoices AND save debug output
+
 ### Customizing Invoice Styling
 
 You can customize the appearance of your invoices by editing `includes/style.css`. The CSS file contains styling for:
 
-- Typography and fonts
+- Typography and fonts (Google Fonts: Funnel Display, Geist, Geist Mono)
 - Colors and spacing
 - Table formatting
 - Layout and margins
@@ -56,8 +75,8 @@ If the CSS file is missing, the script will fall back to minimal default styling
 
 - The script scans the `invoices/` directory for all `.yaml` files (except `_template.yaml`)
 - For each invoice file, it checks if a PDF already exists in the `output/` directory
-- If no PDF exists, it generates a new one with the current date
-- If a PDF already exists, it skips generation to avoid duplicates
+- If no PDF exists (or `--regenerate` is used), it generates a new one with the current date
+- If a PDF already exists and `--regenerate` is not used, it skips generation to avoid duplicates
 - CSS styling is loaded from `includes/style.css` at runtime
 
 ### Example Invoice YAML Structure
@@ -91,6 +110,8 @@ terms: "Payment terms here"
 - **YAML-based data storage**: Easy to edit and version control
 - **Template system**: Reusable template for consistency
 - **Duplicate prevention**: Automatically skips invoices that have already been generated
-- **Professional styling**: Clean, modern PDF output with customizable CSS
+- **Force regeneration**: `--regenerate` flag to overwrite existing PDFs
+- **Debug mode**: `--debug` flag to save HTML output for browser inspection
+- **Professional styling**: Clean, modern PDF output with customizable CSS and Google Fonts
 - **Batch processing**: Processes multiple invoices in one run
 - **Flexible styling**: External CSS file for easy customization 
