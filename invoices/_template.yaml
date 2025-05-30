@@ -10,6 +10,7 @@ from_name: "Your Name"
 from_email: "your.email@domain.com"
 
 to_name: "Client Name"
+# to_email: "client@example.com"  # Optional - include if client has an email
 
 services:
   - description: "Service Description 1"

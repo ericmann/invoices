@@ -38,6 +38,12 @@ def check_existing_pdf(invoice_number, output_dir="output", force_regenerate=Fal
 # Markdown template for the invoice
 def create_markdown_invoice(data):
     total_hours = sum(item["hours"] for item in data["services"])
+    
+    # Build the "To" section with optional email
+    to_section = f"{data['to_name']}"
+    if data.get("to_email") and data["to_email"].strip():
+        to_section += f"  \nEmail: `{data['to_email']}`"
+    
     markdown_content = f"""
 # INVOICE
 
@@ -50,7 +56,7 @@ def create_markdown_invoice(data):
 Email: `{data["from_email"]}`  
 
 ## To
-{data["to_name"]}  
+{to_section}  
 
 ## Description of Services
 For professional services rendered:

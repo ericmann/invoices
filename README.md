@@ -90,6 +90,7 @@ from_name: "Your Name"
 from_email: "your.email@domain.com"
 
 to_name: "Client Name"
+# to_email: "client@example.com"  # Optional field
 
 services:
   - description: "Service Description"
@@ -104,6 +105,9 @@ payment_instructions: |
 
 terms: "Payment terms here"
 ```
+
+**Optional Fields:**
+- `to_email`: If provided, the client's email will be displayed under their name in the "To" section. If omitted or empty, only the client name is shown.
 
 ## Features
 
