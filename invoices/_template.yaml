@@ -1,0 +1,30 @@
+# Invoice Template
+# Copy this file and rename it to <invoice_number>.yaml
+# Replace all placeholder values with actual data
+
+invoice_number: "XXXX"
+invoice_date: "Month DD, YYYY"
+due_date: "Upon receipt"
+
+from_name: "Your Name"
+from_email: "your.email@domain.com"
+
+to_name: "Client Name"
+
+services:
+  - description: "Service Description 1"
+    hours: 0.0
+    rate: 0.00
+    amount: 0.00
+  - description: "Service Description 2"
+    hours: 0.0
+    rate: 0.00
+    amount: 0.00
+
+total_amount: 0.00
+
+payment_instructions: |
+  Please remit payment in [CURRENCY] to the following address:
+  `[WALLET_ADDRESS_OR_BANK_INFO]`
+
+terms: "Payment is due upon receipt. Contact [EMAIL] for any questions." 
